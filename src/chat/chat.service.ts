@@ -14,7 +14,7 @@ export class ChatService {
     personaName: string;
     userInput: string;
   }) {
-    const { userName, personaName } = params;
+    const { userName, personaName, userInput } = params;
 
     const foo = await this.httpService.axiosRef({
       method: 'post',
