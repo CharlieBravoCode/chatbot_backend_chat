@@ -12,6 +12,7 @@ export class ChatService {
   async getInitialChat(params: {
     userName: string;
     personaName: string;
+    userInput: string;
   }) {
     const { userName, personaName } = params;
 
