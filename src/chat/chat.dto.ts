@@ -3,7 +3,7 @@ import { Equals, IsNotEmpty, IsString } from 'class-validator';
 export class GetChatDto {
   @IsNotEmpty()
   @IsString()
-  userName: string;
+  givenName: string;
   @IsNotEmpty()
   @IsString()
   personaName: string;
