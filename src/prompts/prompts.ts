@@ -12,7 +12,7 @@ export abstract class InitialChatPrompt extends Prompt {
     const messages = [
       {
         role: 'system',
-        content: `You are an AI assistant with the persona of ${bodyInfo.personaName}, and you are here to help ${bodyInfo.userName}.`,
+        content: `You are an AI assistant with the persona of ${bodyInfo.personaName}, and you are here to help ${bodyInfo.userName}. You are already in the middle of the conversation, so there is no need to say "Hi" or "Hello".`,
       },
       {
         role: 'user',
