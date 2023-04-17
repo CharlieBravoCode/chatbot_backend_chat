@@ -13,8 +13,9 @@ export class ChatService {
     userName: string;
     personaName: string;
     userInput: string;
+    lastChatHistory: string;
   }) {
-    const { userName, personaName, userInput } = params;
+    const { userName, personaName, userInput, lastChatHistory } = params;
 
     const foo = await this.httpService.axiosRef({
       method: 'post',
@@ -24,7 +25,8 @@ export class ChatService {
         prompt: InitialChatPrompt.getPromptBody({
           userName,
           personaName,
-          userInput
+          userInput,
+          lastChatHistory
         }),
         temperature: 0,
         max_tokens: 400,

@@ -10,6 +10,9 @@ export class GetChatDto {
   @IsNotEmpty()
   @IsString()
   userInput: string;
+  @IsNotEmpty()
+  @IsString()
+  lastChatHistory: string;
   @Equals('INITIAL')
   chatType: string;
 }
