@@ -1,15 +1,29 @@
 class Prompt {
-    getPromptBody: (any: any) => string;
-  }
-  
-  export abstract class InitialChatPrompt extends Prompt {
-    static getPromptBody = (bodyInfo: {
-      userName: string;
-      personaName: string;
-      userInput: string;
-      lastChatHistory: string;
-    }): string => {
-      return `I want you to act as ${bodyInfo.personaName}. --- My name is ${bodyInfo.userName}. --- You should talk to me, like you would talk to a good friend. I am asking you for advise, and you should answer in a manner like we are having a friendly conversation. --- Our conversation so far has been ${bodyInfo.lastChatHistory}  Please respond to the following input of mine: ${bodyInfo.userInput}?`;
-    };
-  }
-  
+  getPromptBody: (any: any) => any;
+}
+
+export abstract class InitialChatPrompt extends Prompt {
+  static getPromptBody = (bodyInfo: {
+    userName: string;
+    personaName: string;
+    userInput: string;
+    lastChatHistory: string;
+  }): Array<{ role: string; content: string }> => {
+    const messages = [
+      {
+        role: 'system',
+        content: `You are an AI assistant with the persona of ${bodyInfo.personaName}, and you are here to help ${bodyInfo.userName}.`,
+      },
+      {
+        role: 'user',
+        content: bodyInfo.lastChatHistory,
+      },
+      {
+        role: 'user',
+        content: bodyInfo.userInput,
+      },
+    ];
+
+    return messages;
+  };
+}

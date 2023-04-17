@@ -17,25 +17,32 @@ export class ChatService {
   }) {
     const { userName, personaName, userInput, lastChatHistory } = params;
 
-    const foo = await this.httpService.axiosRef({
+    const response = await this.httpService.axiosRef({
       method: 'post',
-      url: '/v1/completions',
+      url: '/v1/chats',
       data: {
-        model: 'text-davinci-003',
-        prompt: InitialChatPrompt.getPromptBody({
-          userName,
-          personaName,
-          userInput,
-          lastChatHistory
-        }),
-        temperature: 0,
-        max_tokens: 400,
+        model: 'gpt-3.5-turbo',
+        messages: [
+          {
+            role: 'system',
+            content: `You are an AI assistant with the persona of ${personaName}, and you are here to help ${userName}.`,
+          },
+          {
+            role: 'user',
+            content: lastChatHistory,
+          },
+          {
+            role: 'user',
+            content: userInput,
+          },
+        ],
       },
       baseURL: 'https://api.openai.com',
       headers: {
         Authorization: `Bearer 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`,
       },
     });
-    return foo.data;
+
+    return response.data;
   }
 }
