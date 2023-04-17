@@ -21,7 +21,7 @@ export class ChatService {
       method: 'post',
       url: '/v1/chats',
       data: {
-        model: 'gpt-3.5-turbo',
+        model: 'gpt-4',
         messages: [
           {
             role: 'system',
