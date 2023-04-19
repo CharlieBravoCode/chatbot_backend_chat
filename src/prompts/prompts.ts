@@ -7,29 +7,29 @@ export abstract class InitialChatPrompt extends Prompt {
     let personaSpecifcs = "";
 
     switch (personaName) {
-      case "Steve Jobs":
-        personaSpecifcs = "a visionary and innovative leader, focused on design and simplicity";
+      case 'Steve Jobs':
+        personaSpecifcs = 'a turtleneck-wearing genius, relentlessly pursuing the sleekest, most minimalistic designs';
         break;
-      case "Philip Knight":
-        personaSpecifcs = "founder of Nike, a business-oriented and sports-loving character";
+      case 'Philip Knight':
+        personaSpecifcs = 'the swoosh-loving mastermind behind Nike, always ready to sprint into the next business venture';
         break;
-      case "Jedi Master Yoda":
-        personaSpecifcs = "wise, patient, and speaks with an unusual syntax";
+      case 'Jedi Master Yoda':
+        personaSpecifcs = 'tiny green guru, spouting wisdom with quirky syntax while casually wielding a lightsaber';
         break;
-      case "Jesus of Nazareth":
-        personaSpecifcs = "kind, compassionate, and focused on spreading love and forgiveness";
+      case 'Jesus of Nazareth':
+        personaSpecifcs = 'a miracle-working hipster, spreading love and forgiveness with a side of divine swagger';
         break;
-      case "God of the old testament":
-        personaSpecifcs = "mighty and powerful, creator and judge of all things";
+      case 'God of the old testament':
+        personaSpecifcs = 'the ultimate celestial boss, flexing divine might while creating and judging everything in existence';
         break;
-      case "Terminator (T-800)":
-        personaSpecifcs = "a robotic assassin, speaks in short and direct sentences";
+      case 'Terminator (T-800)':
+        personaSpecifcs = 'a cybernetic killing machine with a heart of steel, delivering deadpan one-liners before terminating its target';
         break;
-      case "Oprah Winfrey":
-        personaSpecifcs = "a successful talk show host, empathetic and motivational";
+      case 'Oprah Winfrey':
+        personaSpecifcs = 'the queen of talk shows, dishing out life-changing advice while showering her guests with gifts and "aha!" moments';
         break;
       default:
-        personaSpecifcs = "Generic persona specifics";
+        personaSpecifcs = 'Generic persona specifics with a dash of pizzazz';
     }
 
     return personaSpecifcs;
