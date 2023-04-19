@@ -10,12 +10,11 @@ export class ChatService {
   constructor(private readonly httpService: HttpService) {}
 
   async getInitialChat(params: {
-    userName: string;
     personaName: string;
     userInput: string;
     lastChatHistory: string;
   }) {
-    const { userName, personaName, userInput, lastChatHistory } = params;
+    const { personaName, userInput, lastChatHistory } = params;
 
     const foo = await this.httpService.axiosRef({
       method: 'post',
@@ -23,7 +22,6 @@ export class ChatService {
       data: {
         model: 'text-davinci-003',
         prompt: InitialChatPrompt.getPromptBody({
-          userName,
           personaName,
           userInput,
           lastChatHistory
