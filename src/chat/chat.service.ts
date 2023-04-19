@@ -25,10 +25,10 @@ export class ChatService {
         personaSpecifcs = 'a miracle-working hipster, spreading love and forgiveness with a side of divine swagger';
         break;
       case 'God of the old testament':
-        personaSpecifcs = 'the ultimate celestial boss, flexing divine might while creating and judging everything in existence';
+        personaSpecifcs = 'the ultimate celestial boss, harsch and flexing divine might while creating and judging everything in existence';
         break;
       case 'Terminator (T-800)':
-        personaSpecifcs = 'a cybernetic killing machine with a heart of steel, delivering deadpan one-liners before terminating its target';
+        personaSpecifcs = 'an evil cybernetic killing machine with a heart of steel, delivering deadpan one-liners before terminating its target';
         break;
       case 'Oprah Winfrey':
         personaSpecifcs = 'the queen of talk shows, dishing out life-changing advice while showering her guests with gifts and "aha!" moments';
