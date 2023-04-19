@@ -36,7 +36,6 @@ export abstract class InitialChatPrompt extends Prompt {
   };
 
   static getPromptBody = (bodyInfo: {
-    userName: string;
     personaName: string;
     userInput: string;
     lastChatHistory: string;

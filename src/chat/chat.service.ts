@@ -42,12 +42,11 @@ export class ChatService {
   
 
   async getInitialChat(params: {
-    userName: string;
     personaName: string;
     userInput: string;
     lastChatHistory: string;
   }) {
-    const { userName, personaName, userInput, lastChatHistory } = params;
+    const { personaName, userInput, lastChatHistory } = params;
 
     const personaSpecifcs = this.getPersonaSpecifics(personaName);
 
