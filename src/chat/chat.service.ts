@@ -10,12 +10,12 @@ export class ChatService {
   constructor(private readonly httpService: HttpService) {}
 
   async getInitialChat(params: {
-    givenName: string;
+    userName: string;
     personaName: string;
     userInput: string;
     lastChatHistory: string;
   }) {
-    const { givenName, personaName, userInput, lastChatHistory } = params;
+    const { userName, personaName, userInput, lastChatHistory } = params;
 
     const response = await this.httpService.axiosRef({
       method: 'post',
@@ -25,7 +25,7 @@ export class ChatService {
         messages: [
           {
             role: 'system',
-            content: `You are an AI assistant with the persona of ${personaName}, and you are here to help ${givenName}. You are already in the middle of the conversation, so there is no need to say "Hi" or "Hello".`,
+            content: `You are an AI assistant with the persona of ${personaName}. You are already in the middle of the conversation, so there is no need to say "Hi" or "Hello".`,
           },
           {
             role: 'user',
