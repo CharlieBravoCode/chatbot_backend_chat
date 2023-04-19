@@ -17,25 +17,19 @@ export class ChatService {
   }) {
     const { userName, personaName, userInput, lastChatHistory } = params;
 
+    const messages = InitialChatPrompt.getPromptBody({
+      userName,
+      personaName,
+      userInput,
+      lastChatHistory,
+    });
+
     const response = await this.httpService.axiosRef({
       method: 'post',
       url: '/v1/chats',
       data: {
         model: 'gpt-4',
-        messages: [
-          {
-            role: 'system',
-            content: `You are an AI assistant with the persona of ${personaName}. You are already in the middle of the conversation, so there is no need to say "Hi" or "Hello".`,
-          },
-          {
-            role: 'user',
-            content: lastChatHistory,
-          },
-          {
-            role: 'user',
-            content: userInput,
-          },
-        ],
+        messages,
       },
       baseURL: 'https://api.openai.com',
       headers: {
